@@ -1,5 +1,6 @@
 {
     "name": "Relay Bot",
+    "description": "A sample bot",
     "dependencies": {
         "botbuilder": "^3.4.4",
         "dotenv": "^2.0.0",
