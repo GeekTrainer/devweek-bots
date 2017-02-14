@@ -23,7 +23,7 @@ module.exports = [
             (err, code, responseBody) => {
                 const sentimentResponse = JSON.parse(responseBody);
                 const score = sentimentResponse.documents[0].score;
-                if(score > .5) session.endConversation(`We're glad you enjoyed it!`);
+                if(score > .5) session.endConversation(`Very happy to hear that.`);
                 else session.endConversation(`We're sorry to hear that.`);
             })
             .setHeader('Ocp-Apim-Subscription-Key', process.env.SENTIMENT_KEY)
