@@ -15,6 +15,6 @@ module.exports = [
     (session, results, next) => {
         // the location will be in results.response
         const location = results.response;
-
+        session.endConversation(`We'll send help to ${location}`);
     },
 ]
