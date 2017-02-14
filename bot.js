@@ -5,6 +5,6 @@ const connector = new builder.ChatConnector({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-const bot = new builder.UniversalBot(connector, requirei('./qadialog.js'));
+const bot = new builder.UniversalBot(connector, require('./qadialog.js'));
 
 module.exports = bot;
