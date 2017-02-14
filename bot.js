@@ -12,4 +12,7 @@ bot.recognizer(new builder.LuisRecognizer(process.env.LUIS_MODEL));
 // string literal on matches means recognizer (LUIS in our case)
 bot.dialog('LostRunner', require('./luis.js')).triggerAction({matches: 'LostRunner'});
 
+// regular expression matches the string (locally)
+bot.dialog('Review', require('./sentiment.js')).triggerAction({matches: /review/i});
+
 module.exports = bot;
