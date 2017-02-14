@@ -5,19 +5,6 @@ const connector = new builder.ChatConnector({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-const bot = new builder.UniversalBot(connector, [
-    (session, args, next) => {
-        const botName = 'Relay bot';
-        const description = `Answer questions for a relay race`;
-
-        session.send(`Hi there! I'm ${botName}`);
-        session.send(`In a nutshell, here's what I can do:\n\n${description}`);
-
-        builder.Prompts.text(session, `What's your name?`);
-    },
-    (session, results, next) => {
-        session.endConversation(`Welcome, ${results.response}`);
-    }
-]);
+const bot = new builder.UniversalBot(connector, require('./qadialog.js'));
 
 module.exports = bot;
