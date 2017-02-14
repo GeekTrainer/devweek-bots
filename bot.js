@@ -10,4 +10,6 @@ const bot = new builder.UniversalBot(connector, require('./qadialog.js'));
 bot.recognizer(new builder.LuisRecognizer(process.env.LUIS_MODEL));
 bot.dialog('LostRunner', require('./luis.js')).triggerAction({matches: 'LostRunner'});
 
+bot.dialog('Review', require('./sentiment.js')).triggerAction({matches: /review/i});
+
 module.exports = bot;
